@@ -97,12 +97,18 @@
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left">
+        <!--<form class="navbar-form navbar-left">
           <div class="form-group">
               <input type="checkbox" id="chatOnLeft" class="form-control" />
               <label for="chatOnLeft">Chat on left side</label>
           </div>
-        </form>
+        </form>-->
+		<form class="navbar-form navbar-left">
+			<div class="form-group">
+				<input type="text" id="yturl" class="form-control"/>
+				<input type="button" class="btn btn-default" onclick="changeYt()" placeholder="Youtube Video ID" value="Change Video"/>
+			</div>
+		</form>
       </div>
     </div>
   </div>
@@ -110,7 +116,7 @@
     <div class="row">
       <iframe 
         class="col-md-9"
-        src="https://www.youtube.com/embed/wzoySmP-Bgg?autoplay=1"
+        src="https://www.youtube.com/embed/DLzxrzFCyOs?autoplay=1"
         frameborder="0"
         allowfullscreen
         id="youtubeFrame">
@@ -202,7 +208,10 @@
       });
     });
 
-      
+	function changeYt(){
+		var yturl = $('#yturl').val();
+		$("#youtubeFrame").attr('src', "https://www.youtube.com/embed/" + yturl + "?autoplay=1");
+	}
   </script>
 </body>
 </html>
